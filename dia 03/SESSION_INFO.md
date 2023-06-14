@@ -12,7 +12,6 @@
 
 - Javascript en acció
 
+  - Interacció amb el DOM (getElementById())
   - script src:
-  - Condicionals
-  - Diàlegs
-  - Interacció amb el DOM
+  - Diàlegs (alert / prompt) >> Bloqueig rendering (event queue)
