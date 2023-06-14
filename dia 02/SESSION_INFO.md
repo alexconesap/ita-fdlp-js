@@ -10,15 +10,8 @@
 
 - HTML: conceptes bàsics
 
-  - DOM
-
 - Javascript en acció
 
   - Blocs de codi {}
   - Declaració de variables
   - Scope per a var i let
-  -
-
-- Què és un condicional
-
--
