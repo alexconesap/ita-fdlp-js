@@ -12,6 +12,7 @@
 
 - Javascript en acció
 
+  - script src:
   - Condicionals
   - Diàlegs
   - Interacció amb el DOM
