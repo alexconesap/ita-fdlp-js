@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Condicionales</title>
+  </head>
+  <body>
+    <h1>Becas!</h1>
+    Edad
+    <input id="edad" type="text" placeholder="Entra tu edad" />
+    <input type="button" value="Enviar" onclick="otorgo_beca()" />
+    <script>
+      function otorgo_beca() {
+        if (!esMayorDeEdad()) {
+          console.log("Pues NO Le doy la beca");
+        } else {
+          console.log("Le doy la beca");
+        }
+      }
+
+      function esMayorDeEdad() {
+        let edad_del_sujeto = document.getElementById("edad").value;
+        return edad_del_sujeto >= 18;
+      }
+    </script>
+  </body>
+</html>
