@@ -9,16 +9,20 @@
     <h1>Becas!</h1>
     Edad
     <input id="edad" type="text" placeholder="Entra tu edad" />
-    <input type="button" value="Enviar" onclick="otorgo_beca()" />
+    <input type="button" value="Consultar" onclick="otorgo_beca()" />
+    <p style="font-size: 10px">Los menores de 18 a&ntilde;os no tienen beca.</p>
+
     <script>
+      // Función llamada desde el evento onclick del elemento button
       function otorgo_beca() {
         if (!esMayorDeEdad()) {
-          console.log("Pues NO Le doy la beca");
+          alert("NO tiene beca");
         } else {
-          console.log("Le doy la beca");
+          window.alert("Tiene beca");
         }
       }
 
+      // Función llamada desde la función otorgo_beca()
       function esMayorDeEdad() {
         let edad_del_sujeto = document.getElementById("edad").value;
         return edad_del_sujeto >= 18;
