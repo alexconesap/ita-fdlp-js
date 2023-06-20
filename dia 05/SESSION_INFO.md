@@ -13,3 +13,8 @@
   - Function numeroValido()
 
 - Cas practic 1
+
+- Exercicis per a la següent sessió:
+  https://itacademy.barcelonactiva.cat/mod/assign/view.php?id=7102
+  https://itacademy.barcelonactiva.cat/mod/assign/view.php?id=7103
+  https://itacademy.barcelonactiva.cat/mod/assign/view.php?id=7104

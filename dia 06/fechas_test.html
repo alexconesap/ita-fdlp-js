@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trabajando las fechas</title>
+  </head>
+  <body>
+    Testeando fechas
+    <script src="fechas.js"></script>
+    <script>
+      // Pedimos el anyo y lo mostramos por consola
+      let anyo = dimeElAnyoPorPrompt("Entra el anyo");
+      console.log(anyo);
+
+      // Pedimos dias
+      let dias = diasDelMes("enero", anyo);
+      console.log(dias);
+
+      // Sentencias equivalentes
+      let x = prompt("Entra el primero");
+      let a = dimeUnValor("Entra el primero");
+    </script>
+  </body>
+</html>
