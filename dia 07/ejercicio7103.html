@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funciones y numeros</title>
+  </head>
+  <body>
+    <h2>Operaciones con numeros</h2>
+
+    <h4 id="id1">Operacion 1</h4>
+    <h4 id="id2">Operacion 2</h4>
+    <h4 id="resta">Operacion 3</h4>
+    <h4 id="divi">Operacion 4</h4>
+    <script>
+      let num1 = prompt("Dime un numero");
+      let num2 = prompt("Dime otro numero");
+
+      // Nos aseguremos que num1 y num2 contienen un numero
+      num1 = Number(num1);
+      num2 = Number(num2);
+
+      let suma = num1 + num2;
+      let multiplicacion = num1 * num2;
+      let resta = num1 - num2;
+      let division = num1 / num2;
+
+      mostrarResultado("id1", `La suma es: ${suma}`);
+      mostrarResultado("id2", `La multiplicacion es: ${multiplicacion}`);
+      mostrarResultado("resta", `La resta es: ${resta}`);
+      mostrarResultado("divi", `La division es: ${suma}`);
+
+      function mostrarResultado(dom_id, texto) {
+        document.getElementById(dom_id).innerHTML = texto;
+        //alert(texto);
+        //console.log(dom_id, texto);
+      }
+    </script>
+  </body>
+</html>

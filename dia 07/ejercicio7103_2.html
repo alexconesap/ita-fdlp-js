@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funciones y numeros</title>
+  </head>
+  <body>
+    <h2>Operaciones con numeros</h2>
+
+    <h4 id="sum">Operacion 1</h4>
+    <h4 id="mult">Operacion 2</h4>
+    <h4 id="resta">Operacion 3</h4>
+    <h4 id="divi">Operacion 4</h4>
+    <script>
+      let num1 = dameUnNumero("Dame el primero");
+      let num2 = dameUnNumero("Dame el segundo");
+
+      let suma = sumar(num1, num2);
+      let multiplicacion = multiplicar(num1, num2);
+      let resta = num1 - num2;
+      let division = num1 / num2;
+
+      mostrarResultado("sum", `La suma es: ${suma}`);
+      mostrarResultado("mult", `La multiplicacion es: ${multiplicacion}`);
+      mostrarResultado("resta", `La resta es: ${resta}`);
+      mostrarResultado("divi", `La division es: ${suma}`);
+
+      function sumar(x, y) {
+        return x + y;
+      }
+      function multiplicar(x, y) {
+        return x * y;
+      }
+
+      function dameUnNumero(texto_para_el_prompt) {
+        let resultado = prompt(texto_para_el_prompt);
+        return Number(resultado);
+      }
+
+      // Verificamos si el elemento DOM con id 'dom_id' existe antes de asignarle
+      // el contenido indicado en el argumento texto
+      function mostrarResultado(dom_id, texto) {
+        let elemento = document.getElementById(dom_id);
+
+        if (elemento == null) {
+          console.error(`Elemento DOM '${dom_id}' no encontrado!`);
+          return;
+        }
+
+        elemento.innerHTML = texto;
+        //alert(texto);
+        //console.log(dom_id, texto);
+      }
+    </script>
+  </body>
+</html>
