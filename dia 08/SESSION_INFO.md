@@ -12,12 +12,7 @@
 
 - Javascript en acció
 
+  - Revisio
+
   - Estructures condicionals: continuació
     https://www.w3schools.com/js/js_if_else.asp
-
-  - Switch
-    https://www.w3schools.com/js/js_switch.asp
-
-  - Iteracions fixes i condicionals (for, while)
-
-- Casos pràctics
