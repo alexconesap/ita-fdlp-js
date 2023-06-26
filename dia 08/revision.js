@@ -27,7 +27,7 @@ function validar_formulario() {
     es_valido = false;
   }
 
-  console.log("FINAL", nombre, apellidos, edad, captcha);
+  console.log("FINAL", nombre, apellidos, edad, captcha, es_valido);
 }
 
 function esMayorDeEdadInSpainAsText(edad) {

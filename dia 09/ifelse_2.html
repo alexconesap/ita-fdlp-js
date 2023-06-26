@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let day;
+      // Sunday=0, Monday=1, Tuesday=2 .. Saturday=6
+      let day_number = new Date().getDay();
+      if (day_number == 0) {
+        day = "Domingo";
+      } else if (day_number == 1) {
+        day = "Lunes";
+      } else if (day_number == 2) {
+        day = "Martes";
+      } else if (day_number == 3) {
+        day = "Miercoles";
+      } else if (day_number == 4) {
+        day = "Jueves";
+      } else if (day_number == 5) {
+        day = "Viernes";
+      } else {
+        day = "Sabado";
+      }
+      console.log(`El dia es: ${day}`);
+    </script>
+  </body>
+</html>

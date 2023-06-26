@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let day;
+      // Sunday=0, Monday=1, Tuesday=2 .. Saturday=6
+      let day_number = 4; // new Date().getDay();
+      switch (day_number) {
+        case 0:
+          day = "Domingo";
+          break;
+        case 1:
+          day = "Lunes";
+          break;
+        case 2:
+          day = "Martes";
+          break;
+        case 3:
+          day = "Miercoles";
+          break;
+        case 4:
+          day = "Jueves";
+          break;
+        case 5:
+          day = "Viernes";
+          break;
+        default:
+          day = "Sabado";
+      }
+      console.log(`El dia es: ${day}`);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numero_mes = pedirMes();
+      switch (numero_mes) {
+        case 1:
+          alert("El mes de ENERO tiene 31 dias");
+          break;
+        case 2:
+          alert("El mes de FEBRERO tiene 28/29 dias");
+          break;
+        case 3:
+          alert("El mes de MARZO tiene 31 dias");
+          break;
+        case 4:
+          alert("El mes de ABRIL tiene 30 dias");
+          break;
+        case 5:
+          alert("El mes de MAYO tiene 31 dias");
+          break;
+        case 6:
+          alert("El mes de JUNIO tiene 30 dias");
+          break;
+        case 7:
+          alert("El mes de JULIO tiene 31 dias");
+          break;
+        case 8:
+          alert("El mes de AGOSTO tiene 31 dias");
+          break;
+        case 9:
+          alert("El mes de SEPTIEMBRE tiene 30 dias");
+          break;
+        case 10:
+          alert("El mes de OCTUBRE tiene 31 dias");
+          break;
+        case 11:
+          alert("El mes de NOVIEMBRE tiene 30 dias");
+          break;
+        case 12:
+          alert("El mes de DICIEMBRE tiene 31 dias");
+          break;
+        default:
+          alert("Numero de mes erroneo");
+      }
+
+      function pedirMes() {
+        let mes = prompt("Dime un mes");
+        mes = parseInt(mes);
+        return mes;
+      }
+    </script>
+  </body>
+</html>

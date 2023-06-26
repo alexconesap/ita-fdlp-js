@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Meses</h1>
+
+    Mes <input id="mes" type="text" />
+
+    <!-- Pensad en la forma de llamar a mostrarMesYDiasDelMes() -->>
+    <!-- o tal vez deberíamos llamar a OTRA función?? -->>
+    <input type="button" value="Mostrar" onclick="mostrarMesYDiasDelMes()" />
+
+    <script>
+      // Este codigo aquí ya no tiene sentido
+      let numero_mes = pedirMes();
+      mostrarMesYDiasDelMes(numero_mes);
+
+      function pedirMes() {
+        // let mes = PROMPT("Entra un mes");
+        let mes = document.getElementById("mes").value;
+        mes = parseInt(mes);
+        return mes;
+      }
+
+      // a) Por qué este código muestra el texto al final del documento HTML
+      // cuando pedirMes() tiene un PROMPT() pero sustituye el HTML
+      // entero cuando pedirMes() obtiene el mes con document.getElement...
+      // ????
+      // b) Probad usando writeln() en lugar de write()
+      function mensaje(texto) {
+        document.write(texto);
+      }
+
+      function mostrarMesYDiasDelMes(mes) {
+        switch (mes) {
+          case 1:
+            mensaje("El mes de ENERO tiene 31 dias");
+            break;
+          case 2:
+            mensaje("El mes de FEBRERO tiene 28/29 dias");
+            break;
+          case 3:
+            mensaje("El mes de MARZO tiene 31 dias");
+            break;
+          case 4:
+            mensaje("El mes de ABRIL tiene 30 dias");
+            break;
+          case 5:
+            mensaje("El mes de MAYO tiene 31 dias");
+            break;
+          case 6:
+            mensaje("El mes de JUNIO tiene 30 dias");
+            break;
+          case 7:
+            mensaje("El mes de JULIO tiene 31 dias");
+            break;
+          case 8:
+            mensaje("El mes de AGOSTO tiene 31 dias");
+            break;
+          case 9:
+            mensaje("El mes de SEPTIEMBRE tiene 30 dias");
+            break;
+          case 10:
+            mensaje("El mes de OCTUBRE tiene 31 dias");
+            break;
+          case 11:
+            mensaje("El mes de NOVIEMBRE tiene 30 dias");
+            break;
+          case 12:
+            mensaje("El mes de DICIEMBRE tiene 31 dias");
+            break;
+          default:
+            mensaje("Numero de mes erroneo");
+        }
+      }
+    </script>
+  </body>
+</html>
