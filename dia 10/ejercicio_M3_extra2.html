@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Litros de pintura</title>
+  </head>
+  <body>
+    <script>
+      const AREA_M2_POR_UN_LITRO = 12; // En una mano
+
+      let p_ancho = pideNumero("Ancho (en metros)");
+      let p_alto = pideNumero("Alto (en metros)");
+      let p_manos = pideNumero("Numero de manos");
+
+      let litros = calculaLitros(p_ancho, p_alto, p_manos);
+
+      alert(`Necesitas ${litros} litros de pintura`);
+
+      function pideNumero(texto) {
+        let valor = prompt(texto);
+        valor = Number(valor);
+        return valor;
+      }
+
+      function calculaLitros(ancho, alto, manos) {
+        let resultado = (ancho * alto * manos) / AREA_M2_POR_UN_LITRO;
+        return Math.round(resultado); // redondeamos a .5
+      }
+    </script>
+  </body>
+</html>

@@ -2,7 +2,7 @@
 
 > IT Academy - Barcelona Activa
 
-## Sessió 8
+## Sessió 9
 
 - Dubtes
 

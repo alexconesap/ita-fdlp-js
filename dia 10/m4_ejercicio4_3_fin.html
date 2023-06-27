@@ -12,31 +12,28 @@
 
     <!-- Pensad en la forma de llamar a mostrarMesYDiasDelMes() -->>
     <!-- o tal vez deberíamos llamar a OTRA función?? -->>
-    <input type="button" value="Mostrar" onclick="mostrarMesYDiasDelMes()" />
+    <input type="button" value="Mostrar" onclick="mostrar_mes()" />
 
     <script>
-      // Este codigo aquí ya no tiene sentido
-      let numero_mes = pedirMes();
-      mostrarMesYDiasDelMes(numero_mes);
-
-      function pedirMes() {
-        // let mes = prompt("Entra un mes");
+      function leerElMesIntroducidoPorElUsuario() {
         let mes = document.getElementById("mes").value;
         mes = parseInt(mes);
         return mes;
       }
 
-      // a) Por qué este código muestra el texto al final del documento HTML
-      // cuando pedirMes() tiene un PROMPT() pero sustituye el HTML
-      // entero cuando pedirMes() obtiene el mes con document.getElement...
-      // ????
-      // b) Probad usando writeln() en lugar de write()
       function mensaje(texto) {
-        document.write(texto);
+        console.log(texto);
       }
 
-      function mostrarMesYDiasDelMes(mes) {
-        switch (mes) {
+      function mostrar_mes() {
+        let m = leerElMesIntroducidoPorElUsuario();
+        mostrarMesYDiasDelMes(m);
+        //mostrarMesYDiasDelMes(leerElMesIntroducidoPorElUsuario());
+      }
+
+      function mostrarMesYDiasDelMes(mesesito) {
+        //let mesesito = leerElMesIntroducidoPorElUsuario();
+        switch (mesesito) {
           case 1:
             mensaje("El mes de ENERO tiene 31 dias");
             break;
