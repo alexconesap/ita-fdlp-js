@@ -1,0 +1,72 @@
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Inscripcion Virtual Gym</h3>
+    Nombre y Apellidos <input type="text" id="name" /> <br />
+    Edad <input type="text" id="age" /> <br />
+    Altura <input type="text" id="tall" /> <br />
+    Peso <input type="text" id="weight" /> <br />
+    Sexo <input type="text" id="sex" placeholder="M,F,N" /> <br />
+    Condicion fisica <input type="text" id="condition" placeholder="S,N" />
+    <br />
+    Horario <input type="text" id="timetable" placeholder="M,T" /> <br />
+    <input type="button" value="Procesar" onclick="procesar()" />
+    <script>
+      function procesar() {
+        let nombre_apellidos = getValue("name");
+        if (!nombreRellenado(nombre_apellidos)) {
+          alert("No puede dejar el nombre en blanco");
+          return;
+        }
+
+        let edad = getNumberValue("age");
+        if (!esMayorDeEdad(edad)) {
+          alert("No autorizado");
+          return;
+        }
+
+        let altura = getNumberValue("tall");
+        let peso = getNumberValue("weight");
+        let sexo = getValue("sex");
+        let condicion = getValue("condition");
+        let horario = getValue("timetable");
+      }
+
+      function nombreRellenado(nombre_y_ap) {
+        if (nombre_y_ap == "") {
+          return false;
+        } else {
+          return true;
+        }
+      }
+
+      function esMayorDeEdad(edat_a_comprobar) {
+        if (edat_a_comprobar >= 18) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      function getValue(dom_id) {
+        let elemento = document.getElementById(dom_id);
+        if (elemento == null) {
+          alert("Te has equivocado developer! No existe " + dom_id);
+          return "";
+        }
+        return elemento.value.trim();
+      }
+
+      function getNumberValue(dom_id) {
+        let valor = getValue(dom_id);
+        if (valor == "" || isNaN(valor)) {
+          alert(`${dom_id} no contiene un número válido ('${valor}')`);
+          return 0;
+        }
+        return Number(valor);
+      }
+    </script>
+  </body>
+</html>
