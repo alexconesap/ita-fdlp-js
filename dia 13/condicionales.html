@@ -1,0 +1,27 @@
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="funciones_fecha.js"></script>
+    <script>
+      let mes_prompt;
+      mes_prompt = prompt("Dime un mes (en numero)");
+      console.log(`mes_prompt contiene '${mes_prompt}'`);
+
+      let mes_numerico1;
+      mes_numerico1 = parseInt(mes_prompt);
+      console.log(`mes_numerico contiene ${mes_numerico1}`);
+
+      let nombre_del_mes;
+      nombre_del_mes = nombreDelMes(mes_numerico1);
+      console.log(`nombre_del_mes contiene '${nombre_del_mes}'`);
+
+      let dias;
+      dias = diasPorMes(nombre_del_mes);
+      console.log(`dias contiene '${dias}'`);
+
+      console.log(`El mes de ${nombre_del_mes} tiene ${dias} dias`);
+    </script>
+  </body>
+</html>

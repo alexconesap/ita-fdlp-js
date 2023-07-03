@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function suma(a, b) {
+        return a + b;
+      }
+
+      function pideDosNumerosYSumalos() {
+        let a = prompt("Dime un numero");
+        if (a.trim() == "") {
+          console.log("Salgo en la primera");
+          return false;
+        }
+        let b = prompt("Dime otro numero");
+        if (b.trim() == "") {
+          console.log("Salgo en la segunda");
+          return false;
+        }
+        return Number(a) + Number(b);
+      }
+
+      function alertaSumaDosMasTres() {
+        alert(5);
+        console.log("Algo por la consola");
+        alert(4);
+        return false;
+      }
+
+      let suma1 = suma(4, 5);
+      let suma2 = suma(3, 1);
+      let suma3 = suma(2, 2);
+
+      console.log(suma1, suma2, suma3);
+    </script>
+  </body>
+</html>
