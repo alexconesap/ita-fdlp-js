@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FizzBuzz</title>
+  </head>
+  <body>
+    <h1>FizzBuzz</h1>
+    <input id="valor_dom" type="number" placeholder="Entra un numero" />
+    <button type="button" onclick="execute()">Click Me!</button>
+
+    <h3 id="resultado"></h3>
+
+    <script>
+      function execute() {
+        // Esto equivale a:
+        // let num = parseInt(document.getElementById("valor_dom").value);
+        let num = parseInt(valor_dom.value);
+
+        let fb = fizzbuz(num);
+
+        resultado.innerHTML = fb;
+        console.log(fb);
+      }
+
+      function fizzbuz(numerito) {
+        if (numerito % 3 === 0 && numerito % 5 === 0) {
+          return "FizzBuzz";
+        } else if (numerito % 3 === 0) {
+          return "Fizz";
+        } else if (numerito % 5 === 0) {
+          return "Buzz";
+        }
+        return numerito;
+      }
+    </script>
+  </body>
+</html>

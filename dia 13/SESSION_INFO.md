@@ -6,16 +6,9 @@
 
 - Revisió exercicis i resolució de dubtes
 
-- Javascript en acció
-
-  - Declaració de funcions:
-    Arrow functions () => {}
-    Funcions en const / variables
-
-  - Arrays i bucle for
-
-  - While
+  - Exercici iteratiu de repàs de contingut
+    - Funcions, paràmetres, resultats
 
 ### Exercicis per la sessió següent
 
-#### Javascript (MOODLE)
+- Refer exercicis M3 i M4 incloent coneixements
