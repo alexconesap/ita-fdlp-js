@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dies i mes 2</title>
+  </head>
+
+  <body>
+    <h1>Dies i mesos!</h1>
+
+    <p>
+      Dime un mes:<input id="mes" type="text" placeholder="Mes (numérico)" />
+    </p>
+
+    <input type="button" value="Mostrar!" onclick="mes_y_dias()" />
+    <p id="solucion"></p>
+
+    <script>
+      const dia = [
+        "",
+        "31", // 1
+        "28 / 29", // 2
+        "31", // 3
+        "30", // ...
+        "31",
+        "30",
+        "31",
+        "31",
+        "30",
+        "31",
+        "30",
+        "31", // 12
+      ];
+
+      const mes = [
+        "",
+        "enero", // 1
+        "febrero", // 2
+        "marzo", // 3
+        "abril", // ...
+        "mayo",
+        "junio",
+        "julio",
+        "agosto",
+        "septiembre",
+        "octubre",
+        "noviembre",
+        "diciembre", // 12
+      ];
+
+      let mes_y_dias = () => {
+        let mes_usuario = leeElMesIntroducidoPorElUsuario("mes");
+
+        comprobarMesYDia(mes_usuario);
+      };
+
+      let leeElMesIntroducidoPorElUsuario = (id) => {
+        let mes_dato = document.getElementById(id).value;
+
+        return validaElMesIntroducidoPorElUsuario(mes_dato);
+      };
+
+      let validaElMesIntroducidoPorElUsuario = (mes) => {
+        if (mes == "" || mes == null || isNaN(mes)) {
+          alert("Mes incorrecto");
+          return;
+        } else {
+          return parseInt(mes);
+        }
+      };
+
+      let comprobarMesYDia = (mes_y_dias) => {
+        let nombre_mes = mes[mes_y_dias];
+        let dias_del_mes = dia[mes_y_dias];
+
+        mensaje(`El mes de ${nombre_mes} tiene ${dias_del_mes} días.`);
+      };
+
+      let mensaje = (texto) => {
+        alert(texto);
+
+        console.log(texto);
+      };
+    </script>
+  </body>
+</html>

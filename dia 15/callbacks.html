@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callbacks</title>
+  </head>
+  <body>
+    <script>
+      let suma = (a, b) => a + b;
+      let multiplicacion = (a, b) => a * b;
+
+      function operacion(algo, a, b) {
+        console.log(algo(a, b));
+      }
+
+      operacion(suma, 2, 3);
+      operacion(suma, 1, 2);
+      operacion(multiplicacion, 2, 3);
+      operacion(multiplicacion, 4, 5);
+
+      const operaciones = [suma, multiplicacion];
+    </script>
+  </body>
+</html>

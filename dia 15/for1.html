@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bucles for. Parte 1</title>
+  </head>
+  <body>
+    <script>
+      const frutas = ["Manzana", "Pera", "Melocoton", "Uva", "Papaya"];
+      for (una_fruta of frutas) {
+        console.log(`Me gusta la/el ${una_fruta}`);
+      }
+
+      for (let i = 0; i < frutas.length; i++) {
+        let una_fruta = frutas[i];
+        console.log(`Me gusta la/el ${una_fruta}`);
+      }
+
+      let suma = 0;
+      for (let i = 1; i <= 5; i++) {
+        console.log(`Sumando ${i} al anterior resultado de suma: ${suma}`);
+        suma = suma + i; // En cada iteracion i vale 1, 2, 3, 4 y 5
+      }
+      console.log(suma);
+
+      // Crea un bucle que muestre de 1 a 10 asteriscos
+      // *
+      // **
+      // ***
+      // .....
+      let ast = "";
+      for (let i = 1; i <= 10; i++) {
+        ast = ast + "*";
+        console.log(ast);
+      }
+    </script>
+  </body>
+</html>

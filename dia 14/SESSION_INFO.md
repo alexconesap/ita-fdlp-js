@@ -2,7 +2,7 @@
 
 > IT Academy - Barcelona Activa
 
-## Sessió 134
+## Sessió 14
 
 - Resolució de dubtes
 
