@@ -1,0 +1,98 @@
+<html lang="en">
+  <head>
+    <title>Banc ITA 1</title>
+  </head>
+  <body>
+    <h1>Banco ITA 1</h1>
+    Valor a ingresar o retirar <input type="number" id="valor" />
+    <input type="button" value="Ingresar" onclick="afegir()" />
+    <input type="button" value="Retirar" onclick="retirar()" />
+    <input type="button" value="Listar" onclick="llistar()" />
+    <p id="mensaje"></p>
+    <p id="listado"></p>
+    <script>
+      let saldo = 0;
+      let operaciones = [];
+
+      function getMoney() {
+        return Number(document.getElementById("valor").value);
+      }
+
+      function displayMessage(text) {
+        document.getElementById("mensaje").innerHTML = text;
+      }
+      function displayOperaciones(text) {
+        document.getElementById("listado").innerHTML = text;
+      }
+      function afegir() {
+        let money = getMoney();
+        let msg = `Has afegit ${money}`;
+        saldo += money;
+        displayMessage(msg);
+        operaciones.push(msg);
+      }
+      function retirar() {
+        let message = `Has retirat ${getMoney()}`;
+        saldo = saldo - getMoney();
+        displayMessage(message);
+        operaciones.push(message);
+      }
+
+      function llistar() {
+        let cadena = "";
+        operaciones.forEach((oper) => (cadena += oper + "<br>"));
+
+        // operaciones.forEach((oper) => {
+        //   cadena += oper + "<br>";
+        // });
+
+        // operaciones.forEach(function (oper) {
+        //   cadena += oper + "<br>";
+        // });
+
+        // operaciones.forEach(function (oper) {
+        //   cadena = cadena + oper + "<br>";
+        // });
+
+        // for (operacion of operaciones) {
+        //   cadena = cadena + operacion + "<br>";
+        // }
+
+        // Equivale a:
+        // for (let x = 0; x < operaciones.length; x++) {
+        //   let op = operaciones[x];
+        //   cadena = cadena + op + "<br>";
+        // }
+
+        displayOperaciones(cadena);
+      }
+
+      // function llistar() {
+      //   let cadena = "";
+      //   for (let x = 0; x < operaciones.length; x++) {
+      //     cadena = cadena + operaciones[x] + "<br>";
+      //   }
+      //   displayOperaciones(cadena);
+      // }
+
+      // function llistar() {
+      //   let dom = document.getElementById("listado");
+      //   dom.innerHTML = "";
+      //   for (let x = 0; x < operaciones.length; x++) {
+      //     dom.innerHTML = dom.innerHTML + operaciones[x] + "<br>";
+      //   }
+      // }
+
+      // function llistar() {
+      //   document.getElementById("listado").innerHTML = "";
+
+      //   for (let x = 0; x < operaciones.length; x++) {
+      //     document.getElementById("listado").innerHTML =
+      //       document.getElementById("listado").innerHTML +
+      //       operaciones[x] +
+      //       "<br>";
+      //   }
+      // }
+    </script>
+  </body>
+</html>

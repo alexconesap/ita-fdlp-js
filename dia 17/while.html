@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // for 1 hasta 100
+      //   let x = 0;
+      //   while (x < 100) {
+      //     console.log(x);
+      //     x++;
+      //   }
+      let edad;
+
+      do {
+        edad = prompt("Dime tu edad");
+      } while (!isValidNumber(edad) || !isValidAge(edad));
+
+      // Crear DOS funciones
+      //    isValidNumber(num) -> retorna true si el param 'num' contiene un n'umero
+      //    isValidAge(edad) -> retorna true si el param 'edad' está comprendida entre 0 y 200
+
+      //   edad = prompt("Dime tu edad");
+      //   while (
+      //     edad == null ||
+      //     edad == "" ||
+      //     isNaN(edad) ||
+      //     edad < 0 ||
+      //     edad > 200
+      //   ) {
+      //     edad = prompt("Dime tu edad");
+      //   }
+      console.log("Salimos con edad " + edad);
+    </script>
+  </body>
+</html>
