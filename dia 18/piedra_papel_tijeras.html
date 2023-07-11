@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Piedra, Papel, Tijera</title>
+  </head>
+  <body>
+    <h2>Piedra, Papel, Tijera</h2>
+    Dime algo
+    <input id="choice" type="text" placeholder="Piedra, Papel, Tijera" />
+    <input type="button" value="Jugar" onclick="jugar()" />
+    <p id="resultado"></p>
+
+    <script>
+      const OPCIONES = ["piedra", "papel", "tijera"];
+
+      function jugar() {
+        let jugada_user = document.getElementById("choice").value;
+        jugada_user = jugada_user.trim().toLowerCase();
+
+        let random_maquina = Math.floor(Math.random() * 3); // 0, 1, 2
+        let jugada_maquina = OPCIONES[random_maquina];
+
+        if (jugada_maquina === jugada_user) {
+          document.getElementById("resultado").innerHTML = "Empate!";
+        } else if (
+          (jugada_maquina === "piedra" && jugada_user === "tijera") ||
+          (jugada_maquina === "papel" && jugada_user === "piedra") ||
+          (jugada_maquina === "tijera" && jugada_user === "papel")
+        ) {
+          document.getElementById(
+            "resultado"
+          ).innerHTML = `Gana la maquina con ${jugada_maquina} frente a ${jugada_user}`;
+        } else {
+          document.getElementById(
+            "resultado"
+          ).innerHTML = `Ganas el user con ${jugada_user} frente a ${jugada_maquina}!`;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>While dia 18 - completo</title>
+  </head>
+  <body>
+    <script>
+      function isValidAge(edad) {
+        // retornaremos true si la edad >=0 y <= 200
+        // sino retornaremos false
+
+        // if (edad >= 0 && edad <= 200) {
+        //   return true;
+        // } else {
+        //   return false;
+        // }
+
+        return edad >= 0 && edad <= 200;
+        //return !(edad < 0 || edad > 200);
+      }
+
+      function isValidNumber(numero) {
+        // if (numero == null || numero == "" || isNaN(numero)) {
+        //   return false;
+        // } else {
+        //   return true;
+        // }
+        return !(numero == null || numero.trim() == "" || isNaN(numero));
+      }
+    </script>
+
+    <script>
+      let edad;
+      do {
+        edad = prompt("Dime tu edad");
+      } while (!isValidNumber(edad) || !isValidAge(edad));
+
+      // let edad = "0";
+      // while (!isValidNumber(edad) || !isValidAge(edad)) {
+      //   edad = prompt("Dime tu edad");
+      // }
+
+      console.log("Salimos con edad " + edad);
+    </script>
+  </body>
+</html>

@@ -12,6 +12,8 @@
 
 - Javascript en acció
 
+  - Por qué existen arrow functions? Son mejores?
+  - for (;;), for of, array.forEach(), ...
   - while, do while
 
 ### Exercicis per la sessió següent
