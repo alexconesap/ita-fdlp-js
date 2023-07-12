@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sumas</title>
+  </head>
+  <body>
+    Num 1<input type="number" id="numero1" /><br />
+    Num 2<input type="number" id="numero2" /><br />
+    <input type="button" value="Sumar rango" onclick="onclickSumar()" />
+    <input
+      type="button"
+      value="Sumar impares en rango"
+      onclick="onclickSumarImpares()"
+    />
+
+    <script>
+      // num1 = 4
+      // num2 = 6
+      // retornar 4 + 5 + 6 = 15
+
+      function onclickSumar() {
+        let num1 = Number(document.getElementById("numero1").value);
+        let num2 = Number(document.getElementById("numero2").value);
+        let la_suma = sumar(num1, num2);
+        alert(la_suma);
+      }
+      function onclickSumarImpares() {
+        let n1 = Number(document.getElementById("numero1").value);
+        let n2 = Number(document.getElementById("numero2").value);
+        let la_suma_es = sumarSoloImpares(n1, n2);
+        alert(la_suma_es);
+      }
+
+      function sumar(num1, num2) {
+        let suma = 0;
+
+        let min;
+        let max;
+        if (num1 > num2) {
+          min = num2;
+          max = num1;
+        } else {
+          min = num1;
+          max = num2;
+        }
+
+        for (let i = min; i <= max; i++) {
+          suma += i;
+        }
+        return suma;
+      }
+
+      function sumarSoloImpares(num1, num2) {
+        let suma = 0;
+
+        let min;
+        let max;
+        if (num1 > num2) {
+          min = num2;
+          max = num1;
+        } else {
+          min = num1;
+          max = num2;
+        }
+
+        for (let i = min; i <= max; i++) {
+          if (i % 2 == 0) {
+            continue;
+          }
+          suma += i;
+        }
+        return suma;
+      }
+
+      console.log("Cargando la pagina");
+    </script>
+  </body>
+</html>

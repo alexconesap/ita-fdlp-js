@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sumas</title>
+  </head>
+  <body>
+    Num 1<input type="number" id="numero1" /><br />
+    Num 2<input type="number" id="numero2" /><br />
+    <input type="button" value="Sumar rango" onclick="sumar()" />
+    <input
+      type="button"
+      value="Sumar impares en rango"
+      onclick="sumarSoloImpares()"
+    />
+
+    <script>
+      function sumar() {
+        // num1 = 4
+        // num2 = 6
+        // retornar 4 + 5 + 6 = 15
+        let num1 = Number(document.getElementById("numero1").value);
+        let num2 = Number(document.getElementById("numero2").value);
+
+        let suma = 0;
+        let i;
+        for (i = num1; i <= num2; i++) {
+          suma += i;
+        }
+        console.log(`Al salir del bucle for "i" vale ${i}`);
+        console.log(`La "suma" es ${suma}`);
+        return suma;
+      }
+
+      function sumarSoloImpares() {
+        // num1 = 4
+        // num2 = 6
+        // retornar 4 + 5 + 6 = 15
+        let num1 = Number(document.getElementById("numero1").value);
+        let num2 = Number(document.getElementById("numero2").value);
+
+        let suma = 0;
+        let i;
+        for (i = num1; i <= num2; i++) {
+          if (i % 2 == 0) {
+            continue;
+          }
+          suma += i;
+        }
+        console.log(`Al salir del bucle for "i" vale ${i}`);
+        console.log(`La "suma" es ${suma}`);
+        return suma;
+      }
+
+      console.log("Cargando la pagina");
+    </script>
+  </body>
+</html>

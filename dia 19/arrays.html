@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays</title>
+  </head>
+  <body>
+    Abre la consola
+    <script>
+      let cadena = "Hola";
+      for (c of cadena) {
+        console.log(c);
+      }
+      console.log(cadena[0]);
+    </script>
+    <script>
+      let numeros = [1, 2, 3, 4, 5];
+
+      let numeros_doblados = numeros.map((el_numero) => el_numero * 2);
+      console.log(numeros_doblados);
+
+      let res1 = numeros.map(function (e) {
+        return e * 2;
+      });
+      console.log(res1);
+
+      function doblarNumero(num) {
+        return num * 2;
+      }
+      let res2 = numeros.map(doblarNumero);
+      console.log(res2);
+
+      let res3 = [];
+      for (n of numeros) {
+        res3.push(n * 2);
+      }
+      console.log(res3);
+
+      let la_suma = numeros.reduce((acumulado, elemento) => {
+        return elemento + acumulado;
+      }, 0);
+      console.log(la_suma);
+
+      let suma = 0;
+      for (e of numeros) {
+        suma += e;
+      }
+
+      let frutas = ["Manzana", "Pera", "Ciruela"];
+      // Quiero "<p>Manzana</p><p>Pera</p><p>Ciruela</p>"
+      frutas.reduce(function (resultado_anterior, e) {
+        return resultado_anterior + "<p>" + e + "</p>";
+      }, "");
+
+      let nombres = ["Manzana", "Pera", "Ciruela"];
+      function tu_funcion(previous_or_initial, actual) {
+        return previous_or_initial + actual.toLowerCase() + ",";
+      }
+      let resultado = nombres.reduce(tu_funcion, "");
+      console.log(resultado);
+    </script>
+  </body>
+</html>
