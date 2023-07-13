@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global variables</title>
+  </head>
+  <body>
+    <script>
+      var una_global = "Global";
+      let no_global = "NO Global";
+
+      console.log(`globalThis.global es ${globalThis.global}`);
+      console.log(`globalThis.no_global es ${globalThis.no_global}`);
+
+      console.log(`this.global es ${this.global}`);
+      console.log(`this.no_global es ${this.no_global}`);
+
+      console.log(`window.global es ${window.global}`);
+      console.log(`window.no_global es ${window.no_global}`);
+    </script>
+  </body>
+</html>

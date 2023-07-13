@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Becas</title>
+  </head>
+  <body>
+    Estas en paro? <input type="text" id="en_paro" value="no" />
+    <br />
+    Tienes titulo Universitario? <input type="text" id="titulo" value="no" />
+    <br />
+    Donde vives? <input type="text" id="la_ciudad" value="barcelona" />
+    <br />
+    Cuales es tu edad? <input type="number" id="la_edad" value="18" />
+    <br />
+    <input id="boton_beca" type="button" value="Comprobar beca" />
+
+    <script>
+      const MAXIMO_BECAS_OTORGABLES = 5;
+      let nombres = [];
+      let becas_otorgadas = 0;
+
+      let bt1 = document.getElementById("boton_beca");
+      bt1.addEventListener("click", comprobar_beca);
+
+      // El valor de retorno true/false (beca otorgada o no)
+      // se ignora en el caso de invocarse la function con
+      // el boton (event click)
+      function comprobar_beca() {
+        if (becas_otorgadas == MAXIMO_BECAS_OTORGABLES) {
+          alert("Ya se han superado el max de becas otorgables!");
+          return false;
+        }
+
+        let paro = document
+          .getElementById("en_paro")
+          .value.trim()
+          .toLowerCase();
+        let tituloUniv = document
+          .getElementById("titulo")
+          .value.trim()
+          .toLowerCase();
+        let ciudad = document
+          .getElementById("la_ciudad")
+          .value.trim()
+          .toLowerCase();
+        let edad = Number(document.getElementById("la_edad").value);
+
+        let esta_en_paro = paro === "si" || paro === "sí";
+        let tiene_titulo_univ = tituloUniv === "si" || tituloUniv === "sí";
+        let es_mayor_de_edad = edad >= 18;
+        let ciudad_valida = ciudad === "barcelona" || ciudad === "girona";
+        if (
+          ciudad_valida &&
+          (esta_en_paro || (es_mayor_de_edad && tiene_titulo_univ))
+        ) {
+          let nombre = prompt("Como te llamas, agraciado?");
+          nombres.push(nombre);
+          becas_otorgadas++;
+          alert(`Tienes beca ${nombre} !`);
+          if (becas_otorgadas == MAXIMO_BECAS_OTORGABLES) {
+            alert(nombres);
+          }
+          return true;
+        } else {
+          alert("NO Tienes beca!");
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

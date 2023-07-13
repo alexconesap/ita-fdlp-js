@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Defaults para functions</title>
+  </head>
+  <body>
+    <script>
+      function comprueba_edad(edad = 0) {
+        console.log(`Edad es ${edad}`);
+        return edad >= 18;
+      }
+
+      function alerta(texto = "Nada!") {
+        alert(texto);
+      }
+
+      comprueba_edad(10);
+      comprueba_edad(19);
+    </script>
+  </body>
+</html>

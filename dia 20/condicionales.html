@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uso de condicionales</title>
+  </head>
+  <body>
+    <script>
+      let paro = "si"; // viene de un prompt
+      let tituloUniv = "no"; // viene de un prompt
+      let edad = 20; // viene de un prompt
+      let ciudad = "Madrid"; // viene de un prompt
+
+      ciudad = ciudad.toLowerCase();
+
+      // Si est'a en paro pero vive fuera de Barcelona o Girona NO tiene beca
+
+      if (
+        ((paro === "si" || paro === "sí") &&
+          (ciudad === "barcelona" || ciudad === "girona")) ||
+        (edad >= 18 &&
+          (ciudad === "barcelona" || ciudad === "girona") &&
+          (tituloUniv === "si" || tituloUniv === "sí"))
+      ) {
+        alert("Tienes beca!");
+      }
+
+      let esta_en_paro = paro === "si" || paro === "sí";
+      let tiene_titulo_univ = tituloUniv === "si" || tituloUniv === "sí";
+      let es_mayor_de_edad = edad >= 18;
+      let ciudad_valida = ciudad === "barcelona" || ciudad === "girona";
+      if (
+        ciudad_valida &&
+        (esta_en_paro || (es_mayor_de_edad && tiene_titulo_univ))
+      ) {
+        alert("Tienes beca!");
+      }
+    </script>
+  </body>
+</html>
