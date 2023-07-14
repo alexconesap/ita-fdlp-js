@@ -31,5 +31,7 @@ let c = JSON.stringify(circulo);
 // '{"position":{"x":10,"y":20},"radius":20}'
 console.log(circulo.position);
 console.log(circulo.position.x);
+// Equival a
 console.log(circulo["position"]);
+console.log(circulo["position"]["x"]);
 // {x: 10, y: 20}
