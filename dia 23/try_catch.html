@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Try catch</title>
+  </head>
+  <body>
+    Abre la consola
+    <script>
+      try {
+        // Esto genera error "Uncaught ReferenceError: variable is not defined"
+        console.log(variable);
+      } catch (e) {
+        console.log("Algo ha ido mal");
+      }
+      console.log('Sigue la ejecucion');
+
+      // Esto genera error "Uncaught ReferenceError: variable is not defined"
+      console.log(variable);
+      console.log('Esto ya no sale');
+    </script>
+  </body>
+</html>

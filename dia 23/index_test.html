@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+  </head>
+  <body>
+    <script>
+      class ErrorEspecieNoInformada extends Error {
+        constructor() {
+          super("La especie es requerida!");
+        }
+      }
+
+      class Animal {
+        static #animalitos_creados = 0;
+
+        constructor(nombre, edad = 0, especie, raza) {
+          if (especie == undefined || especie.trim() == "") {
+            throw new ErrorEspecieNoInformada();
+          }
+          if (raza == undefined || raza.trim() == "") {
+            throw Error("Falta la raza");
+          }
+
+          this._nombre = nombre;
+          this.especie = especie;
+          this.raza = raza;
+          this.edad = edad;
+
+          Animal.#animalitos_creados++;
+        }
+
+        get nombre() {
+          return this._nombre.toUpperCase();
+        }
+        set nombre(n) {
+          this._nombre = n;
+        }
+
+        static contador() {
+          return Animal.#animalitos_creados;
+        }
+
+        // toJSON() {
+        //   return { nombre: this._nombre };
+        // }
+
+        // toString() {
+        //   return JSON.stringify(this);
+        // }
+      }
+
+      class Perro extends Animal {
+        constructor(nombre, edad = 0, raza) {
+          super(nombre, edad, "canis lupus familiaris", raza);
+        }
+
+        ladra() {
+          console.log(
+            `${this.nombre}, el ${this.especie} de raza ${this.raza} ladra!`
+          );
+        }
+      }
+
+      class Poodle extends Perro {
+        constructor(nombre, edad = 0) {
+          super(nombre, edad, Poodle.name);
+        }
+
+        ladra() {
+          super.ladra();
+          console.log(
+            `${this.nombre}, el ${this.especie} de raza ${this.raza} ladra suavessssito!`
+          );
+        }
+      }
+
+      try {
+        let a = new Animal("Dolce", 0);  
+      } catch (error) {
+        console.log(`Argo malo happened! ${error.message}`);
+        if (error instanceof ErrorEspecieNoInformada) {
+          console.error('Falta la especie');
+        }
+      }
+
+      let a = new Animal("Dolce", 0, "perro", "pastor aleman");
+      console.log(a, typeof a, a.constructor.name);
+      let b = new Perro("Perrin", 0, "poodle");
+      console.log(b, typeof b, b.constructor.name);
+      let c = new Poodle("Gabbana ", 0);
+      console.log(c, typeof c, c.constructor.name);
+
+      //a.ladra();
+      b.ladra();
+      c.ladra();
+
+      // Animal.prototype.muevete = function () { console.log(`${this.nombre} se mueve!`) }
+      // a.__proto__.muevete = function () { console.log(`${this.nombre} se mueve!`) }
+      // a.muevete();
+      // b.muevete();
+      // c.muevete();
+
+      // String.prototype.trimado = function () { return this.trim().split('').reverse().join(''); }
+    </script>
+  </body>
+</html>

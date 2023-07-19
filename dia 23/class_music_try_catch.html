@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Musica</title>
+  </head>
+  <body>
+    <script>
+      class InstrumentoMusical {
+        anyoFabricacion;
+        nombre;
+        color;
+        material;
+
+        constructor(nombre, material, color, anyoFabricacion = 0) {
+          this.nombre = nombre;
+          this.anyoFabricacion = anyoFabricacion;
+          this.color = color;
+          this.material = material;
+
+          if (!nombre) {
+            throw Error("Me falta el nombre corason!");
+          }
+        }
+      }
+
+      let musica1;
+      let instrumento_creado;
+      do {
+        try {
+          // hacemos algo que puede fallar
+          let nombre = prompt('Dime el nombre');
+          musica1 = new InstrumentoMusical(nombre);
+          instrumento_creado = true;
+        } catch (e) {
+          // ha dado un error. Lo manejamos
+          console.log(e.message);
+          instrumento_creado = false;
+        }
+        // aqui seguimos haya o no fallado
+      } while (!instrumento_creado);
+
+      console.log("Llego aki");
+      console.log(musica1);
+    </script>
+  </body>
+</html>

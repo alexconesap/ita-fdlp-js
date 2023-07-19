@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Musica</title>
+  </head>
+  <body>
+    <script>
+      class InstrumentoMusical {
+        anyoFabricacion;
+        nombre;
+        color;
+        material;
+
+        constructor(name, color, material, anyoFabricacion = 0) {
+          this.nombre = name;
+          this.anyoFabricacion = anyoFabricacion;
+          this.color = color;
+          this.material = material;
+        }
+
+        suena() {
+           console.log(`El ${this.nombre} esta sonando. Su color es ${this.color}`);
+        }
+      }
+
+      class InstrumentoCuerda extends InstrumentoMusical {
+        // private / no es accesible desde fuera
+        #_numero_cuerdas;
+
+        constructor(my_name, colorete, cuerdas) {
+           super(my_name, colorete, 'madera');
+           this.numero_cuerdas = cuerdas;
+        }
+
+        set numero_cuerdas(valor) {
+            if (valor <= 0 || valor > 10) {
+                throw Error('Numero de cuerdas incorrecto. Minimo son 0 y maximo son 10');
+            }
+            this.#_numero_cuerdas = valor;
+        }
+        get numero_cuerdas() {
+            return this.#_numero_cuerdas;
+        }
+
+        suena(volumen = 0) {
+           console.log(`La cuerda vibra en ${this.nombre} con volumen ${volumen}`);
+           super.suena(); 
+        }
+      }
+
+      class InstrumentoPercusion extends InstrumentoMusical {
+      }
+  
+      class InstrumentoViento extends InstrumentoMusical {
+      }
+
+      let musica1 = new InstrumentoCuerda('Instrumento 1', 'rojo', 5);
+      let musica2 = new InstrumentoPercusion('Instrumento 2', 'azul', 'metal');
+      let musica3 = new InstrumentoViento('Instrumento 3', 'amarillo', 'plastico');
+      let banda = [
+        musica1, musica2, musica3
+      ];
+    </script>
+  </body>
+</html>

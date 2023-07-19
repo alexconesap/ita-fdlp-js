@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercici M5 1</title>
+  </head>
+  <body>
+    <p id="numeroPalabras"></p>
+    <p id="grupoPalabras"></p>
+
+    <script>
+      // Fer un programa que pregunti a l'usuari/ària pel nombre (número) de paraules que es volen introduir a un array.
+      // Un cop l'usuari/ària respongui, el programa haurà de preguntar per tantes paraules com el nombre (número) de paraules
+      // que ha dit l’usuari/ària que volia introduir.
+      // Les paraules s'aniran guardant a l'array i un cop han sigut totes introduïdes, es mostren per pantalla.
+
+      //1. Pregunta nº palabras que quiere introducir en un grupo.
+      function preguntaNumeroPalabras() {
+        let np = prompt("Escribe cuántas palabras quieres crear en número");
+        np = Number(np);
+        document.getElementById("numeroPalabras").innerHTML = np;
+        console.log(`La respuesta de la primera pregunta ${np}`);
+        return np;
+      }
+
+      //2. Convertir ese nª introducido en el número de palabras que vamos a preguntar en otra pregunta.
+      // Como? con arrays?? Funciones??
+      function preguntaGrupoPalabras(numPalabras) {
+        let grupoPalabras = [];
+
+        for (i = 1; i <= numPalabras; i++) {
+          let res1 = prompt(`Escribe la palabra ${i} de ${numPalabras}:`);
+          if (res1 == null) {
+            //
+          }
+          grupoPalabras.push(res1);
+        }
+
+        return grupoPalabras;
+      }
+
+      let numPalabras = preguntaNumeroPalabras();
+      let resultado = preguntaGrupoPalabras(numPalabras);
+      document.getElementById("grupoPalabras").innerHTML = resultado;
+    </script>
+  </body>
+</html>
