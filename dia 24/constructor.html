@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // new AnimalFunc('Dolce', 2) >> this es un object
+        // AnimalFunc('Dolce', 2) >>> this es Window
+        // AnimalFunc >>> retorna la function
+        function AnimalFunc(name, age) {
+            this.name = name;
+            this.age = age;
+            console.log(this);
+        }
+
+        class Persona {
+            name; // required
+            age; // required
+            grade;
+            altura;
+            peso;
+            raza;
+            ciudad;
+            provincia;
+            telefono;
+            email;
+            passport;
+
+            constructor(name, age, city) {
+                if (!name) throw Error('Name is required!');
+                if (!age) throw Error('Age is required!');
+                this.name = name;
+                this.age = age;
+                this.ciudad = city;
+            }
+
+            showName() {
+                console.log(this.name.trim());
+            }
+        }
+
+        // new Animal('Dolce', 2, 'Canis Lupus', 'Poodle')
+        class Animal {
+            nombre_animal;
+            edad_animal;
+            especie;
+            raza;
+            constructor(nombre, edad, especie, raza) {
+                this.nombre_animal = nombre;
+                this.edad_animal = edad;
+                this.especie = especie;
+                this.raza = raza;
+                console.log(`Estamos en el constructor de Animal`);
+            }
+            muevete() {
+                console.log(`El Animal ${this.nombre_animal} se mueve`);
+            }
+        }
+
+        // new CanisLupus('Dolce', 2, 'Poodle')
+        class CanisLupus extends Animal {
+            constructor(nombre, edad, raza) {
+                super(nombre, edad, 'Canis Lupus', raza);
+            }
+            muevete() {
+                super.muevete();
+                //this.
+            }
+        }
+
+        // new Poodle('Dolce 3', 2)
+        class Poodle extends CanisLupus {
+            constructor(nombre, edad) {
+                super(nombre, edad, 'Poodle (Caniche)');
+            }
+            muevete() {
+                super.muevete();
+                //this.
+            }
+        }
+    </script>
+</body>
+</html>

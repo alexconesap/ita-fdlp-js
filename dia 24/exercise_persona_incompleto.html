@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Formulario de alta</h2>
+    <h4>Abre la consola</h4>
+    Nombre <input type="text" id="dom_nombre" /><br />
+    Anyo nacimiento <input type="number" id="dom_anyo" /><br />
+    <input type="button" value="Enviar formulario" onclick="crearPersona()" />
+    <script>
+      // Persona(nombre, anyo_nacimiento)
+      //      anyo_nacimiento es privado.
+      //      anyo_nacimiento no puede ser < 0 ni > anyo actual
+      //      get edad() >>> la edad segun anyo_nacimiento y anyo actual
+      //
+      //      static anyo_actual() >>> retorna anyo actual
+
+      class Persona {
+        static contador = 0;
+        nombre;
+        #_edad;
+
+        constructor(name, edad) {
+          this.nombre = name;
+          this.age = edad;
+          Persona.contador++;
+        }
+
+        // accessor type getter
+        // objeto.age
+        get age() {
+          return this.#_edad;
+        }
+        // accessor type getter
+        // objeto.age = 1000
+        set age(valor) {
+          if (valor < 0 || valor > 180)
+            throw Error(`La edad ${valor} no es valida`);
+          this.#_edad = valor;
+        }
+
+        toString() {
+          return `N: ${this.nombre}, A: ${this.age}`;
+        }
+      }
+
+      function crearPersona() {
+        let p = new Persona(
+          document.getElementById("dom_nombre").value,
+          parseInt(document.getElementById("dom_anyo").value)
+        );
+        console.log(p.toString());
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Formulario de alta</h2>
+    Nombre <input type="text" id="dom_nombre" ><br>
+    Edad <input type="number" id="dom_edad" ><br>
+    <input type="button" value="Enviar formulario" onclick="crearPersona()">
+    <script>
+
+        class LibMath {
+            static square(n) {
+                return n * n;
+            }
+        }
+
+        class Persona {
+            static contador = 0;
+            nombre;
+            #_edad;
+
+            constructor(name, edad) {
+                this.nombre = name;
+                this.age = edad;
+                Persona.contador++;
+            }
+
+            // accessor type getter
+            // objeto.age 
+            get age() {
+                return this.#_edad;
+            }
+            // accessor type getter
+            // objeto.age = 1000
+            set age(valor) {
+                if (valor < 0 || valor > 180) 
+                   throw Error(`La edad ${valor} no es valida`);
+                this.#_edad = valor;
+            }
+        }
+
+        function crearPersona() {
+            let p = new Persona(
+                document.getElementById('dom_nombre').value,
+                parseInt(document.getElementById('dom_edad').value)
+            );
+            console.log(p);
+        }
+    </script>
+</body>
+</html>
