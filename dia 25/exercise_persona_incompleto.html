@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Formulario de alta</h2>
+    <h4>Abre la consola</h4>
+    Nombre <input type="text" id="dom_nombre" /><br />
+    Anyo nacimiento <input type="number" id="dom_anyo" /><br />
+    <input type="button" value="Enviar formulario" onclick="crearPersona()" />
+    <script>
+      // Persona(nombre, anyo_nacimiento)
+      //      anyo_nacimiento es privado.
+      //      anyo_nacimiento no puede ser < 0 ni > anyo actual
+      //      get edad() >>> la edad segun anyo_nacimiento y anyo actual
+      //
+      //      static anyo_actual() >>> retorna anyo actual
+
+      class Persona {
+         name;
+         #anyo_privado;
+
+         constructor(nombre, anyo_nacimiento) {
+            console.log('Constructor', nombre, anyo_nacimiento);
+            this.name = nombre;
+
+            // Para lamar a set anyo(valor)
+            // let a = new Persona('Test', 1800);
+            //   a.anyo = 1800
+            //   a llama a set anyo (1800)
+            this.anyo = anyo_nacimiento;
+            // Esto NO llama al setter...
+            //this.#_anyo_privado = anyo_nacimiento;
+         }
+
+         // Crearmos un atributo llamado 'edad' para LECTURA
+         // Se accede como cualquier otro atributo.
+         // p.edad
+         get edad() {
+            return Persona.getCurrentYear() - this.anyo;
+         }
+
+         // Atributo para ESCRITURA anyo
+         // p.anyo = 2050
+         set anyo(v) {
+            if (v < 0 || v > Persona.getCurrentYear())
+               throw Error('El anyo es incorrecto!');
+            this.#anyo_privado = v;
+         }
+         // Atributo de LECTURA anyo
+         // p.anyo
+         get anyo() {
+            return this.#anyo_privado;
+         }
+
+         static getCurrentYear() {
+           return new Date().getFullYear();
+         }
+      }
+
+      function crearPersona() {
+        let persona1 = new Persona(
+          document.getElementById("dom_nombre").value,
+          parseInt(document.getElementById("dom_anyo").value)
+        );
+        console.log(persona1);
+      }
+    </script>
+  </body>
+</html>
