@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banca Online</title>
+</head>
+<body>
+    Crea una classe "CompteBancari" amb l'atribut PRIVAT "saldo" 
+    i dos mètodes públics "ingressar(valor)" 
+    i "retirar(valor)" per gestionar els moviments del compte. 
+    Assegura't que el mètode "retirar" no permet un saldo negatiu 
+    i mostra un missatge d'error si s'intenta retirar més diners 
+    dels que hi ha disponibles. 
+    
+    A continuació, crea una instància de "CompteBancari", 
+    fes un ingrés inicial i realitza diverses operacions de 
+    retirada per comprovar el correcte funcionament.
+    Permetrem mostrar tots els moviments
+    existents que siguin >= a un valor donat.
+    
+       <br> 
+    <input type="number" id="dom_valor"><br>   
+    <input type="button" value="Ingresar" onclick="dom_ingresar()">
+    <input type="button" value="Retirar" onclick="dom_retirar()">
+    <input type="button" value="Listar" onclick="dom_listar()">
+    <p id="dom_listado"></p>
+    <input type="number" id="dom_valor_busqueda"><br>   
+    <input type="button" value="Buscar" onclick="dom_buscar()">
+    <p id="dom_resultados_busqueda"></p>
+    <script>
+        class CompteBancari {
+            saldo;
+
+            constructor() {
+                this.saldo = 0;
+            }
+
+            ingressar(valor) {
+                this.saldo = this.saldo + valor;
+                return this.saldo;
+            }
+            retirar(valor) {
+                this.saldo = this.saldo - valor;
+                return this.saldo;
+            }
+        }
+
+        function dom_ingresar() {
+            console.log('DOM ingreso');
+            let valor = Number(document.getElementById('dom_valor').value);
+            cuenta1.ingressar(valor);
+        }
+        function dom_retirar() {
+            console.log('DOM retiro');
+            let valor = Number(document.getElementById('dom_valor').value);
+            cuenta1.retirar(valor);
+        }
+        function dom_listar() {
+            console.log('DOM listo');
+        }
+
+        let cuenta1 = new CompteBancari();
+    </script>   
+</body>
+</html>
