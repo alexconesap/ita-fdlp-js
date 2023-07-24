@@ -47,14 +47,22 @@
         }
 
         function dom_ingresar() {
-            console.log('DOM ingreso');
             let valor = Number(document.getElementById('dom_valor').value);
+            console.log(`DOM ingreso de ${valor}`);
+
             cuenta1.ingressar(valor);
+
+            document.getElementById('dom_valor').value = '';
+            document.getElementById('dom_valor').focus();
         }
         function dom_retirar() {
-            console.log('DOM retiro');
             let valor = Number(document.getElementById('dom_valor').value);
+            console.log(`DOM retiro de ${valor}`);
+
             cuenta1.retirar(valor);
+
+            document.getElementById('dom_valor').value = '';
+            document.getElementById('dom_valor').focus();
         }
         function dom_listar() {
             console.log('DOM listo');
