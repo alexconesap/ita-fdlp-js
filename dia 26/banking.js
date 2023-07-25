@@ -7,7 +7,7 @@ class CuentaBancaria {
     this.movimientos.push(valor_a_ingresar);
   }
   retirar(valor_a_retirar) {
-    // anyadir ERROR si el valor es 0
+    // @todo anyadir ERROR si el valor es 0
     if (valor_a_retirar > this.saldo) {
       throw Error(`No hay saldo suficiente (Saldo actual: ${this.saldo})`);
     }
@@ -65,7 +65,7 @@ let cuenta1 = new CuentaBancaria();
 function dom_ingresar() {
   let valor = Math.abs(Number(document.getElementById("dom_valor").value));
 
-  // Quitar esto y hacer la comprobacion en la clase
+  // @todo Quitar esto y hacer la comprobacion en la clase
   if (valor == 0) {
     alert("Ingrese un importe valido");
     return;
@@ -82,7 +82,7 @@ function dom_ingresar() {
 function dom_retirar() {
   let valor = Math.abs(Number(document.getElementById("dom_valor").value));
 
-  // Quitar esto y hacer la comprobacion en la clase
+  // @todo Quitar esto y hacer la comprobacion en la clase
   if (valor == 0) {
     alert("Ingrese un importe valido");
     return;
@@ -106,6 +106,7 @@ function dom_buscar() {
   let dom = document.getElementById("dom_resultados_busqueda");
   dom.innerHTML = "Movimientos:<br>";
 
+  // @todo implementar buscar() de manera que el for siga funcionando
   let movs = cuenta1.buscar(valor);
   // let array_movimientos_filtrados = cuenta1.filtrarMovimientos(valor);
   // let movs = cuenta1.movimientos_transformados(array_movimientos_filtrados);
@@ -119,6 +120,7 @@ function dom_listar() {
   let dom = document.getElementById("dom_listado");
   dom.innerHTML = "Movimientos:<br>";
 
+  // @todo implementar listar() de manera que el for siga funcionando
   let movs = cuenta1.listar();
 //  let movs = cuenta1.movimientos_transformados(cuenta1.movimientos);
   for (m of movs) {

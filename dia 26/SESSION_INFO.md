@@ -22,6 +22,8 @@
 
 ### Exercicis que es poden anar realitzant
 
+- Completar @todo banking.js
+
 TOTS
 
 ### Enlaces
