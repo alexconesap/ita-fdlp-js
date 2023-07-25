@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking v1.0 con funciones</title>
+</head>
+<body>
+    <input type="number" id="dom_valor"><br>   
+    <input type="button" value="Ingresar" onclick="dom_ingresar()">
+    <input type="button" value="Retirar" onclick="dom_retirar()">
+    <input type="button" value="Listar" onclick="dom_listar()">
+    <p id="dom_listado"></p>
+    <input type="number" id="dom_valor_busqueda"><br>   
+    <input type="button" value="Buscar" onclick="dom_buscar()">
+    <p id="dom_resultados_busqueda"></p>
+</body>
+    <script>
+        // almacenar movimientos
+        // almacenar un saldo
+        //   anyadir y retirar saldo
+        //   listar los movimientos
+        //   filtrar los movimientos por un valor
+
+        let saldo = 0;
+        let movimientos = [];
+
+        function dom_buscar() {
+            let valor = Number(document.getElementById('dom_valor_busqueda').value);
+            let dom = document.getElementById('dom_resultados_busqueda');
+            dom.innerHTML = 'Movimientos:<br>';
+            for (mov of movimientos) {
+                if (mov >= valor) {
+                    if (mov >= 0) {
+                        dom.innerHTML = dom.innerHTML + 'Ingreso de ' + mov + '<br>';
+                    } else {
+                        dom.innerHTML = dom.innerHTML + 'Retiro de ' + Math.abs(mov) + '<br>';
+                    }
+                }
+            }
+        }
+
+        function dom_listar() {
+            let dom = document.getElementById('dom_listado');
+            dom.innerHTML = 'Movimientos:<br>';
+            for (mov of movimientos) {
+                if (mov >= 0) {
+                    dom.innerHTML = dom.innerHTML + 'Ingreso de ' + mov + '<br>';
+                } else {
+                    dom.innerHTML = dom.innerHTML + 'Retiro de ' + Math.abs(mov) + '<br>';
+                }
+            }
+        }
+
+        function dom_ingresar() {
+            let valor = Math.abs(Number(document.getElementById('dom_valor').value));
+
+            if (valor == 0) {
+                alert('Ingrese un importe valido')
+                return;
+            }
+
+            saldo = saldo + valor;
+            movimientos.push(valor);
+
+            document.getElementById('dom_valor').value = '';
+            document.getElementById('dom_valor').focus();
+        }
+        function dom_retirar() {
+            let valor = Math.abs(Number(document.getElementById('dom_valor').value));
+
+            if (valor == 0) {
+                alert('Ingrese un importe valido')
+                return;
+            }
+
+            if (valor > saldo) {
+                alert(`No hay saldo suficiente (Saldo actual: ${saldo})`);
+                return;
+            }
+
+            saldo = saldo - valor;
+            movimientos.push(-valor);
+
+            document.getElementById('dom_valor').value = '';
+            document.getElementById('dom_valor').focus();
+        }
+    </script>
+</html>

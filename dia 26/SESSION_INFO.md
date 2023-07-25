@@ -12,8 +12,6 @@
 
   - Function objects
 
-  - Array iterations (x in array)
-
 #### IMPORTANT!!!
 
 - Qüestionari https://itacademy.barcelonactiva.cat/mod/edwiserform/view.php?id=7981
