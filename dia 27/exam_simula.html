@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica examen</title>
+</head>
+<body>
+    <h3>Pregunta 1</h3>
+    <p>Donat el següent array de paraules: ["gat", "gos", "peix", "ocell", "serp"], 
+        crea una funció en JavaScript per mostrar per pantalla la 
+        <strong>paraula més llarga i la paraula més curta de l'array</strong>.
+    </p>
+    <p>La paraula més llarga és: <span id="paraulaLlarga"></span></p>
+    <p>La paraula més curta és: <span id="paraulaCurta"></span></p>
+    <button onclick="llargaCurta()">Mostrar</button>
+
+    <h3>Pregunta 2</h3>
+    <p>Donat el següent array de noms de ciutats: ["Barcelona", "Madrid", "València", "Sevilla", "Bilbao"], crea una funció en JavaScript per mostrar per pantalla el <strong>nombre de ciutats que contenen una lletra específica</strong> proporcionada per l'usuari.</p>
+    <p>Lletra a buscar: <input type="text" id="lletraInput"></p>
+    <button onclick="ciutatsAmbLletra()">Mostrar</button>
+    <p>Noms de ciutats que contenen la lletra: <span id="mostrarCiutats"></span></p>
+    
+    <h3>Pregunta 3</h3>
+    <p>Donat l'array de nombres següent: [2, 7, 12, 5, 8, 10, 3, 6, 15, 4], crea una funció en JavaScript per calcular i mostrar la <strong>suma de tots els nombres parells</strong> continguts a l'array.</p>
+    <p>La suma dels nombres parells és: <span id="mostrarSuma"></span></p>
+    <button onclick="sumaNombresParells()">Mostrar</button>
+
+    <div>
+        <h3>Pregunta 4</h3>
+        <p>Pas 1: Crea una classe anomenada Animal amb els atributs: nom, especie, edat i color.
+            Afegeix els mètodes necessaris per retornar el contingut dels seus atributs.</p>
+        <p>Pas 2: Crea 5 objectes de la classe Animal directament en el codi i posa'ls en un array d'animals.</p>
+        <p>Pas 3: Mostra les dades d'un animal introduint el seu nom en la caixa de text.</p>
+        
+        <label for="buscarAnimal">Introdueix el nom de l'animal</label>
+        <input type="text" name="buscarAnimal" id="buscarAnimal">
+        <button onclick="buscarAnimal()">Veure animal</button>
+        <!-- Llista pregunta 2b -->
+        <ul> 
+            <li>Nom: <span id="nomAnimal"> </span></li>
+            <li>Especie: <span id="especie"> </span></li>
+            <li>Edat: <span id="edat"> </span></li>
+            <li>Color: <span id="color"> </span></li>
+        </ul>
+        <h3>Pregunta 5</h3>
+        <p>Mostra per consola els animals que són de color negre, cridant al seu mètode toString()</p>
+        <button onclick="animalsNegres()">Animals Negres</button>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script src="ejercicio5.js"></script>
+</body>
+</html>

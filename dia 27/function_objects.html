@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos como funciones</title>
+</head>
+<body>
+    <script>
+        // 'LITERAL' objects
+        // Me obliga a repetir codigo y no puedo definir una estructura comun
+        let persona1 = {
+            nombre: 'Pepe',
+            saluda: function () {
+                alert(`Hola ${this.nombre}`);
+            }
+        };
+        let persona3 = {
+            nombre: 'PepeLuis',
+            saluda: function () {
+                alert(`Hola ${this.nombre}`);
+            }
+        };
+
+        // Classes
+        class Persona {
+            nombre;
+            constructor(name) {
+                this.nombre = name;
+            }
+            saluda() {
+                alert(`Hola ${this.nombre}`);
+            }
+        }
+        let persona2a = new Persona('Yo');
+        let persona2b = new Persona('Mismo');
+        let persona2c = new Persona('Tu');
+
+        // Function classes        
+        function Animal(nombre) {
+            this.nombre = nombre;
+            this.saluda = function () {
+                alert(`Hola ${this.nombre}`);
+            }
+        }
+        let animalito1 = new Animal('Manolin');
+
+        // Factory function
+        function createNewAnimal(nomme) {
+            return {
+                nombre: nomme,
+                saluda: function () {
+                    alert(`Hola ${this.nombre}`);
+                }   
+            };
+        }
+        let animalito2a = createNewAnimal('Pepon');
+    </script>
+</body>
+</html>

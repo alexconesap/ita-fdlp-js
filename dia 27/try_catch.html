@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Try catch</title>
+  </head>
+  <body>
+    Abre la consola
+    <script>
+      function obtenerMovimientosDelServidor() {
+          // llama a un servidor y recibe los movimientos bancarios
+      }  
+      let movimientos = obtenerMovimientosDelServidor();
+
+
+      function mi_unica_function() {
+        let edad = 20;
+        let banderita;
+    
+        if (edad > 40) {
+          console.log("Mayor de 40");
+          banderita = true;
+        } else {
+          console.log("Menor de 40");
+          banderita = false;
+        }
+
+        if (banderita) {
+          console.log("Seguimos!");
+        } else {
+          console.log("Pero podria!");
+        }
+
+        try {
+          // esta se ejecuta
+          console.log('Esto se ejecuta');
+          // .... esta falla... INTERRUMPTE EL FLUJO
+          let a;
+          console.log(`El trim de a es ${a.trim()}`);
+          // esta ya no se ejecuta
+          console.log('Esto ya no se ejecuta');
+        } catch (error) {
+          console.error(error);
+          // Manejamos el error o mostramos un aviso o hacemos un LOG
+          return;
+        }
+        // el codigo sigue por aqui
+        console.log('Seguimos por el final');
+      }
+
+      mi_unica_function();
+    </script>
+  </body>
+</html>
